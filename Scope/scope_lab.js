@@ -27,6 +27,17 @@ function show() {
 
 show();
 
-console.log(functionVar);
-console.log(functionLet);
-console.log(functionConst);
+
+{
+    // Block scope
+    var blockVar = "I'm a block scoped variable";
+    let blockLet = "I'm a block scoped let";
+    const blockConst = "I'm a block scoped const";
+    blockVar = "1";
+    blockLet = "2";
+    //blockConst = "3";
+}
+
+blockVar = "1";
+blockLet = "2";
+blockConst = "3";
