@@ -26,6 +26,8 @@ function endTest() {
         return word !== "";
     }).length;
 
+    var characterLength = userTypedText.length;
+
     var wpm = 0;
 
     if (timeElapsed !== 0 && !isNaN(typedWords)) {
@@ -33,7 +35,8 @@ function endTest() {
     }
 
     var outputDiv = document.getElementById("output");
-    outputDiv.innerHTML = "<h2>Typeing Test Results:</h2>" +
+    outputDiv.innerHTML = "<h2>Typing Test Results:</h2>" +
+    "<p>Total Length: " + characterLength + "</p>"+
     "<p>Words Typed: " + typedWords + "</p>" +
     "<p>Time Elapsed: " + timeElapsed.toFixed(2) + " seconds</p>" +
     "<p>Words Per Minute (WPM): " + wpm + "</p>";
