@@ -76,7 +76,11 @@ function startGameTimer(timeLeft) {
     gameInterval = setInterval(() => {
         timeLeft--;
         timerElement.textContent = `Time Left: ${timeLeft}`;
-
+        if (checkForWin()) {
+            clearInterval(gameInterval);
+            alert('You won!');
+            startbtn.disabled = false;
+        }
         if (timeLeft === 0) {
             clearInterval(gameInterval);
             let timeLeft = gameTime;
@@ -84,6 +88,14 @@ function startGameTimer(timeLeft) {
             startbtn.disabled = false;
         }
     }, 1000);
+}
+
+function checkForWin() {
+    if (score === 24) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 startbtn.addEventListener('click', startGame);
